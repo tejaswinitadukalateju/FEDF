@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f2f2f2;
+        margin:0;
+        padding:0;
+    }
+    .container{
+        width:450px;
+        background:white;
+        margin:40px auto;
+        padding:25px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+    h2{
+        text-align:center;
+        color:#333;
+    }
+    label{
+        font-weight:bold;
+    }
+    input, select, textarea{
+        width:100%;
+        padding:8px;
+        margin:6px 0 15px 0;
+        border:1px solid #ccc;
+        border-radius:5px;
+    }
+    .gender, .skills{
+        margin-bottom:15px;
+    }
+    .gender input, .skills input{
+        width:auto;
+        margin-right:5px;
+    }
+    .buttons{
+        text-align:center;
+    }
+    button{
+        padding:10px 20px;
+        margin:5px;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+        color:white;
+    }
+    .submit{
+        background:green;
+    }
+    .reset{
+        background:red;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration Form</h2>
+
+    <form>
+        <label>Full Name:</label>
+        <input type="text" placeholder="Enter your full name">
+
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email">
+
+        <label>Password:</label>
+        <input type="password" placeholder="Enter password">
+
+        <label>Date of Birth:</label>
+        <input type="date">
+
+        <label>Gender:</label>
+        <div class="gender">
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender"> Other
+        </div>
+
+        <label>Select Course:</label>
+        <select>
+            <option>--Choose Course--</option>
+            <option>BCA</option>
+            <option>BSc</option>
+            <option>BTech</option>
+            <option>MCA</option>
+        </select>
+
+        <label>Skills:</label>
+        <div class="skills">
+            <input type="checkbox"> HTML
+            <input type="checkbox"> CSS
+            <input type="checkbox"> JavaScript
+            <input type="checkbox"> Python
+        </div>
+
+        <label>Address:</label>
+        <textarea rows="4" placeholder="Enter your address"></textarea>
+
+        <div class="buttons">
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" class="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

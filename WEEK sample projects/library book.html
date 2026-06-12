@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Book Management</title>
+</head>
+<body>
+
+<h2>Library Book Management System</h2>
+<div id="output"></div>
+
+<script>
+// Book Class
+class Book {
+    constructor(title, author, basePrice, ...extraPrices) {
+        this.title = title;
+        this.author = author;
+        this.basePrice = basePrice;
+        this.extraPrices = extraPrices;
+    }
+
+    // Arrow function to calculate final price
+    calculateFinalPrice = () => {
+        let totalExtra = this.extraPrices.reduce((sum, price) => sum + price, 0);
+        return this.basePrice + totalExtra;
+    }
+}
+
+// Create book objects
+const book1 = new Book("JavaScript Basics", "John Doe", 300, 50, -20);
+const book2 = new Book("Python Guide", "Jane Smith", 400, 30, -10, 20);
+const book3 = new Book("Web Development", "Alex Lee", 500, -50, 40);
+
+// Store books in array
+const books = [book1, book2, book3];
+
+// Display output
+let outputDiv = document.getElementById("output");
+
+books.forEach(book => {
+    // Destructuring
+    const { title, author } = book;
+
+    const finalPrice = book.calculateFinalPrice();
+
+    // Template literal display
+    outputDiv.innerHTML += `
+        <p>
+        <strong>Title:</strong> ${title} <br>
+        <strong>Author:</strong> ${author} <br>
+        <strong>Final Price:</strong> ₹${finalPrice}
+        </p>
+        <hr>
+    `;
+});
+</script>
+
+</body>
+</html>
